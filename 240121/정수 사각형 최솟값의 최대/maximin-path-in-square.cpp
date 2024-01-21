@@ -15,12 +15,12 @@ int main() {
         dp[1][i]=min(dp[1][i-1],map[1][i]);
     }
     for(int i=2;i<=n;i++){
-        dp[i][1]=min(dp[1][i-1],map[1][i]);
+        dp[i][1]=min(dp[i-1][1],map[i][1]);
     }
 
     for(int i=2;i<=n;i++){
         for(int j=2;j<=n;j++){
-            dp[i][j]=min(min(dp[i-1][1],dp[i][j-1]),map[i][j]);
+            dp[i][j]=min(max(dp[i-1][j],dp[i][j-1]),map[i][j]);
         }
     }
     cout << dp[n][n];
