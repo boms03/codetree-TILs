@@ -12,17 +12,26 @@ int main() {
         if(s[i]=='('){
             stk.push('(');
         } else if(s[i]==')'){
+            if(stk.empty()||stk.top()!='('){
+                cout << 0;
+                exit(0);
+            }
             if(stk.top()=='('){
                 stk.pop();
             }
         } else if(s[i]=='['){
             stk.push('[');
         } else if(s[i]==']'){ 
+            if(stk.empty()||stk.top()!='['){
+                cout << 0;
+                exit(0);
+            }
             if(stk.top()=='['){
                 stk.pop();
             }
         }
     }
+
     if(stk.empty()) cout << 1;
     else cout << 0;
     return 0;
