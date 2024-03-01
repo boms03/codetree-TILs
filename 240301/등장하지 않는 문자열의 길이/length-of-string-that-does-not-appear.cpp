@@ -6,27 +6,40 @@ using namespace std;
 int main() {
     int n;
     string s;
-    set<string>str;
+    set<string>str[100];
     cin >> n;
     cin >> s;
 
     //모든 부분문자열 구하기
     for(int i=0;i<n;i++){
-        string temp = ""+s[i];
-        str.insert(temp);
-        for(int j=0;j<n;j++){
+        string temp;
+        temp+=s[i];
+        str[1].insert(temp);
+        for(int j=i+1;j<n;j++){
             temp+=s[j];
-            str.insert(temp);
+            str[temp.length()].insert(temp);
         }
     }
     int ans = 100;
-    for(auto& st: str){
-        int cnt = 0;
-        int len = st.length();
-        for(int i=0;i<n-len+1;i++){
-            if(st == s.substr(i,len)) cnt++;
+    for(int k=1;k<n;k++){
+        bool complete = false;
+        for(auto& st: str[k]){
+            int cnt = 0;
+            int len = st.length();
+            for(int i=0;i<n-len+1;i++){
+                if(st == s.substr(i,len)){
+                    // cout << st << " " << s.substr(i,len) << endl;
+                    cnt++;
+               }
+            }
+            if(cnt>=2){
+                complete = true;
+                break;
+            }
         }
-        if(cnt<2) ans=min(ans,len);
+        if(!complete){
+            cout << k;
+            exit(0);
+        }
     }
-    cout << ans;
 }
