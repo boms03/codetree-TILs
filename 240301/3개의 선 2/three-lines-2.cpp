@@ -13,12 +13,47 @@ int main() {
 
     for(int i=0;i<=10;i++){
         for(int j=0;j<=10;j++){
-            for(int k=0;k<=10;k++){
-                int cnt=0;
-                if(i==j || j==k || i==k) continue;
-                for(int j=0;j<n;j++){
-                    if(i==v[j].first || j==v[j].first || k==v[j].first) cnt++;
-                    if(i==v[j].second || j==v[j].second || k==v[j].second) cnt++;
+            for(int k=0;k<=10;k++){ // x 3개, x 2개 y1개, x1개 y2개, y3개
+
+                int cnt = 0;
+                for(int e=0;e<v.size();i++){
+                    if(v[e].first==i || v[e].first==j || v[e].first==k){
+                        cnt++;
+                    }
+                }
+                if(cnt==n){
+                    cout << 1;
+                    exit(0);
+                }
+
+                cnt = 0;
+                for(int e=0;e<v.size();i++){
+                    if(v[e].first==i || v[e].first==j || v[e].second==k){
+                        cnt++;
+                    }
+                }
+                if(cnt==n){
+                    cout << 1;
+                    exit(0);
+                }
+
+                cnt = 0;
+                for(int e=0;e<v.size();i++){
+                    if(v[e].first==i || v[e].second==j || v[e].second==k){
+                        cnt++;
+                    }
+                }
+                if(cnt==n){
+                    cout << 1;
+                    exit(0);
+                }
+
+
+                cnt = 0;
+                for(int e=0;e<v.size();i++){
+                    if(v[e].second==i || v[e].second==j || v[e].second==k){
+                        cnt++;
+                    }
                 }
                 if(cnt==n){
                     cout << 1;
