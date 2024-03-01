@@ -12,7 +12,7 @@ int main() {
     for(int i=0;i<=10;i++){
         int cnt=0;
         for(int j=0;j<n;j++){
-            if(i==v[i].first) cnt++;
+            if(i==v[j].first) cnt++;
         }
         if(cnt==n){
             cout << 1;
@@ -22,7 +22,7 @@ int main() {
     for(int i=0;i<=10;i++){
         int cnt=0;
         for(int j=0;j<n;j++){
-            if(i==v[i].second) cnt++;
+            if(i==v[j].second) cnt++;
         }
         if(cnt==n){
             cout << 1;
