@@ -16,7 +16,7 @@ int main() {
             for(int k=0;k<=10;k++){ // x 3개, x 2개 y1개, x1개 y2개, y3개
 
                 int cnt = 0;
-                for(int e=0;e<v.size();i++){
+                for(int e=0;e<v.size();e++){
                     if(v[e].first==i || v[e].first==j || v[e].first==k){
                         cnt++;
                     }
@@ -27,7 +27,7 @@ int main() {
                 }
 
                 cnt = 0;
-                for(int e=0;e<v.size();i++){
+                for(int e=0;e<v.size();e++){
                     if(v[e].first==i || v[e].first==j || v[e].second==k){
                         cnt++;
                     }
@@ -38,7 +38,7 @@ int main() {
                 }
 
                 cnt = 0;
-                for(int e=0;e<v.size();i++){
+                for(int e=0;e<v.size();e++){
                     if(v[e].first==i || v[e].second==j || v[e].second==k){
                         cnt++;
                     }
@@ -50,7 +50,7 @@ int main() {
 
 
                 cnt = 0;
-                for(int e=0;e<v.size();i++){
+                for(int e=0;e<v.size();e++){
                     if(v[e].second==i || v[e].second==j || v[e].second==k){
                         cnt++;
                     }
