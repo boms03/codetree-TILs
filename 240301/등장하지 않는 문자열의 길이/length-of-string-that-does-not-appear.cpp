@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     int n;
     string s;
-    set<string>str[100];
+    set<string>str[101];
     cin >> n;
     cin >> s;
 
