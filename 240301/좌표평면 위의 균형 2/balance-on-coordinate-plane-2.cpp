@@ -14,6 +14,7 @@ int main() {
     int ans = 101;
     for(int y=1;y<=100;y++){
         for(int x=1;x<=100;x++){
+            if(y%2==1 || x%2==1) continue;
             int cnt1=0, cnt2=0, cnt3=0, cnt4=0;
             for(int i=0;i<n;i++){
                 //위오른
