@@ -12,11 +12,11 @@ int main() {
         v.push_back(input);
     }
     int ans = 0;
-    for(int i=1;i<=5;i++){
+    for(int i=1;i<=n;i++){
         int sum = 0;
 
         int index = i;
-        for(int j=0; j<m;j++){
+        for(int i=0;i<m;i++){
             sum+=v[index];
             index = v[index];
         }
