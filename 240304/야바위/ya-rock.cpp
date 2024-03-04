@@ -23,13 +23,14 @@ int main() {
     int ans = 0;
     // 처음에 넣을곳 선택
     for(int i=1;i<=3;i++){
+        cout << "new" << endl;
         int point=0;
         int rock[4]={0,};
         rock[i]=1; // 돌 넣기
 
         for(int j=0;j<n;j++){
             swap(rock, map[j][0],map[j][1]); //위치 바꾸기
-            if(rock[map[i][2]]==1) point++; // 돌 확인
+            if(rock[map[j][2]]==1) point++; // 돌 확인
         }
 
         ans = max(ans,point);
