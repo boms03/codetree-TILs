@@ -23,7 +23,6 @@ int main() {
     int ans = 0;
     // 처음에 넣을곳 선택
     for(int i=1;i<=3;i++){
-        cout << "new" << endl;
         int point=0;
         int rock[4]={0,};
         rock[i]=1; // 돌 넣기
