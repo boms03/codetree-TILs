@@ -14,8 +14,8 @@ int main() {
         int sum = 0;
         for(int j=i+2;j<n;j++){
             sum = map[i]+map[j];
+            answer = max(answer,sum);
         }
-        answer = max(answer,sum);
     }
     cout << answer;
 
