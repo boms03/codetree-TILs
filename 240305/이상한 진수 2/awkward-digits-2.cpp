@@ -6,7 +6,7 @@ int main() {
     string s;
     cin >> s;
     int i;
-    for(int i=0;i<s.size();i++){
+    for(i=0;i<s.size();i++){
         if(s[i]=='0'){
             s[i]='1';
             break;
