@@ -14,9 +14,10 @@ int main() {
     }
 
     int cnt = 0;
-    for(int i=1;i<=MAX_N;i++){
-        for(int j=1;j<=MAX_N;j++){
-            for(int k=1;k<=MAX_N;k++){
+    for(int i=1;i<MAX_N;i++){
+        for(int j=1;j<MAX_N;j++){
+            for(int k=1;k<MAX_N;k++){
+                if(i==j || j==k || k==i) continue;
                 bool check = true;
                 for(int l=0;l<n;l++){
                     int cnt_one = 0, cnt_two = 0;
