@@ -12,7 +12,7 @@ int main() {
         cin >> arr[i];
     }
     int min_cost = 1e9;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n-t+1;i++){
         int cost = 0;
         for(int j=i;j<i+t;j++){
             cost += abs(arr[j]-h);
