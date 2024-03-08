@@ -7,6 +7,7 @@ using namespace std;
 int n,m;
 int arr_n [MAX_N];
 int arr_m [MAX_M];
+int temp [MAX_M];
 
 int main() {
 
@@ -19,20 +20,24 @@ int main() {
         cin >> arr_m[i];
     }
 
-    int cnt_all = 0;
-    do{
-        // 시작
-        for(int i=0;i<n-m+1;i++){
-            int cnt = 0;
-            // m개 만큼
-            for(int j=0;j<m;j++){
-                if(arr_n[i+j]==arr_m[j]) cnt++;
-            }
+    sort(arr_m,arr_m + m);
 
-            if(cnt==m) cnt_all++;
+    int cnt = 0;
+    for(int i=0;i<n-m+1;i++){
+        for(int j=0;j<m;j++){
+            temp[j] = arr_n[i+j];
         }
-    } while(next_permutation(arr_m,arr_m+m));
+        sort(temp,temp+m);
 
-    cout << cnt_all;
+        bool match = true;
+        for(int k=0;k<m;k++){
+            if(temp[k]!=arr_m[k]){
+                match = false;
+                break;
+            }
+        }
+        if(match) cnt ++;
+    }
+    cout << cnt;
     return 0;
 }
