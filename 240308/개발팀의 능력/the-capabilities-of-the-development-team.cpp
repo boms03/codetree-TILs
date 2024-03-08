@@ -33,6 +33,7 @@ int main() {
             }
         }
     }
-    cout << min_total;
+    if(min_total==1e9) cout << -1;
+    else cout << min_total;
     return 0;
 }
