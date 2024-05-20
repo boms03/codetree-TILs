@@ -13,12 +13,13 @@ int main() {
         cin >> s[i] >> e[i];
     }
     int count = 0;
+    bool overlap = false;
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             if(i==j) continue;
-            if((s[i]<s[j] && e[j]<e[i])||(s[j]<s[i] && e[i]<e[j])) break;
-            if(j==n-1) count++;
+            if((s[i]<s[j] && e[j]<e[i]) || (s[j]<s[i] && e[i]<e[j])) overlap=true;
         }
+        if(!overlap) count++;
     }
     cout << count;
     return 0;
