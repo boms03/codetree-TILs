@@ -24,17 +24,17 @@ int main() {
 
     int max_count = 0;
     for(int i=0;i<n;i++){
-        int count = 0;
+        int count = 1;
         int total = p[i]/2;
-        if(total>b) continue;
+        if(total > b)
+            continue;
         for(int j=0;j<n;j++){
             if(j==i) continue;
-            if(total+p[i]>b) break;
-            total += p[i];
+            if(total + p[j] > b) break;
+            total += p[j];
             count++;
         }
         max_count = max(max_count,count);
-        count = 0;
     }
     cout << max_count;
     return 0;
