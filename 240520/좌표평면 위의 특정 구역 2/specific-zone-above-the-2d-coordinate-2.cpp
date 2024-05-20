@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 #define PII pair<int, int>
+#define MAX_NUM 40000
+#define MAX_N 100
 using namespace std;
 
 
@@ -12,24 +15,26 @@ int main() {
         cin >> x >> y;
         v.push_back(make_pair(x,y));
     }
-    int minArea = 1e9;
+
+    int min_area = INT_MAX;
+
     for(int i = 0; i < n; i++){
-        int maxX = 0;
-        int minX = 1e9;
-        int maxY = 0;
-        int minY = 1e9;
+        int max_x = 1;
+        int min_x = MAX_NUM;
+        int max_y = 1;
+        int min_y = MAX_NUM;
         for(int j=0; j<n; j++){
             if(i==j) continue;
             int x = v[j].first;
             int y = v[j].second;
-            maxX = max(x,maxX);
-            minX = min(x,minX);
-            maxY = max(y,maxY);
-            minY = min(y,minY);
+            max_x = max(x,max_x);
+            min_x = min(x,min_x);
+            max_y = max(y,max_y);
+            min_y = min(y,min_y);
         }
-        int area = (maxX-minX) * (maxY-minY);
-        minArea = min(minArea,area);
+        int area = (max_x-min_x) * (max_y-min_y);
+        min_area = min(min_area,area);
     }
-    cout << minArea;
+    cout << min_area;
     return 0;
 }
