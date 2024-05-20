@@ -20,6 +20,7 @@ int main() {
             if((s[i]<s[j] && e[j]<e[i]) || (s[j]<s[i] && e[i]<e[j])) overlap=true;
         }
         if(!overlap) count++;
+        overlap = false;
     }
     cout << count;
     return 0;
