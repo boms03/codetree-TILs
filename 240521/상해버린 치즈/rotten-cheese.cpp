@@ -1,6 +1,6 @@
 #include <iostream>
 #define MAX_N 51
-#define MAX_D 101
+#define MAX_D 1001
 using namespace std;
 
 typedef struct{
