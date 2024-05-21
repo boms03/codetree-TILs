@@ -1,9 +1,9 @@
 #include <iostream>
-#define MAX_N 11
+#define MAX_NUM 100
 using namespace std;
 
 int n,a,b;
-int s[MAX_N], e[MAX_N];
+int s[MAX_NUM], e[MAX_NUM];
 int main() {
     cin >> n;
     for(int i=0; i<n; i++){
@@ -15,11 +15,11 @@ int main() {
         for(int j=i+1;j<n;j++){
             for(int k=j+1;k<n;k++){
 
-                int fill[MAX_N]={0,};
+                int fill[MAX_NUM]={0,};
                 bool flag = true;
-                
+
                 for(int m=0; m<n; m++){
-                    if(m==i || m== j || m==k) continue;
+                    if(m==i || m==j || m==k) continue;
                 
                     for(int x=s[m]; x<=e[m]; x++){
                         if(fill[x]==1){
@@ -28,6 +28,7 @@ int main() {
                         }
                         fill[x]=1;
                     }
+                    if(!flag) break;
                 }
                 if(flag) count++;
             }
