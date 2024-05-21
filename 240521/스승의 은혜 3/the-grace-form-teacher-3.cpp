@@ -4,9 +4,9 @@
 using namespace std;
 
 typedef struct{
-    int sum;
     int p;
     int s;
+    int sum;
 } cost_info;
 
 bool compare(const cost_info &a, const cost_info &b) {
@@ -28,7 +28,7 @@ int main() {
         info[i] = c;
     }
 
-    sort(info,info+n, compare);
+    sort(info, info+n, compare);
 
     int max_count = 0;
     for(int i=0;i<n;i++){
@@ -38,8 +38,8 @@ int main() {
         int count = 1;
         for(int j=0;j<n;j++){
             if(j==i) continue;
-            if(cost + info[j].p/2 + info[j].s > b) break;
-            cost += info[j].p/2 + info[j].s;
+            if(cost + info[j].p + info[j].s > b) break;
+            cost += info[j].p + info[j].s;
             count++;
         }
         max_count = max(max_count,count);
