@@ -21,10 +21,9 @@ int n,m,d,s;
 int main() {
 
     cin >> n >> m >> d >> s;
-
-    int p,m,t;
     
     for(int i=0; i<d; i++){
+        int p,m,t;
         cin >> p >> m >> t;
         eat e;
         e.p = p;
@@ -34,6 +33,7 @@ int main() {
     }
 
     for(int i=0; i<s; i++){
+        int p,t;
         cin >> p >> t;
         sick s;
         s.p = p;
@@ -46,14 +46,15 @@ int main() {
 
     // guess one possible rotten cheese
     for(int i=1; i<=m; i++){
-
-        int count = 0;
-        int time[MAX_N];
+        int time[MAX_N]={0,};
         for(int j=0;j<d;j++){
             // check if a person ate the cheese
             if(info1[j].m != i) continue;
             // record when the person ate it
-            time[info1[j].p]=info1[j].t;
+            // first time eating
+            if(time[info1[j].p] == 0) time[info1[j].p]=info1[j].t;
+            // ate earlier than the recorded time
+            if(time[info1[j].p] > info1[j].t) time[info1[j].p]=info1[j].t;
         }
         bool possible = true;
         // check contradiction
@@ -65,7 +66,7 @@ int main() {
         }
 
         int count_pill = 0;
-        // count if the cheese is actually rotten
+        // count sick people
         if(possible){
             for(int j=1; j<=n; j++){
                 if(time[j]!=0) count_pill++;
@@ -75,7 +76,6 @@ int main() {
     }
 
     cout << max_pill;
-
 
     return 0;
 }
