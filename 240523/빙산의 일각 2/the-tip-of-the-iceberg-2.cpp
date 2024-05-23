@@ -12,20 +12,17 @@ int main() {
     }
     int max_count = 0;
     for(int i=1; i<=MAX_H; i++){
-        int consecutive = 0;
         int count = 0;
-        for(int j=0; j<n; j++){
-            // sinked
-            if(height[j]<=i){
-                if(consecutive>0){
-                    consecutive=0;
-                    count++;
-                }
-            } else consecutive++;
-        }
-        if(consecutive>0) count++;
 
+        // count if it starts with not sinked
+        if(height[0]>i) count++;
+
+        // count when sinked and not sinked are consecutively found
+        for(int j=1; j<n; j++){
+            if(height[j-1]<=i && height[j]>i) count++;
+        }
         max_count = max(max_count,count);
+        
     }
     cout << max_count;
     return 0;
