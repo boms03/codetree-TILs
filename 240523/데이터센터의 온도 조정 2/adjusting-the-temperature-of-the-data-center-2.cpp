@@ -1,5 +1,6 @@
 #include <iostream>
-#define MAX_N 1001
+#define MAX_N 1000
+#define MAX_T 1000
 using namespace std;
 
 int n, c,h,g;
@@ -11,7 +12,7 @@ int main() {
         cin >> Ta[i] >> Tb[i];
     }
     int max_count = 0;
-    for (int i=0; i<1000; i++){
+    for (int i=0; i<MAX_T; i++){
         int count = 0;
         for(int j=0; j<n; j++){
             if(Ta[j] > i){
