@@ -4,7 +4,7 @@
 using namespace std;
 
 int n,m;
-int a[MAX_N], b[MAX_N];
+int a[MAX_M], b[MAX_M];
 int main() {
     cin >> n >> m;
     for(int i=0; i<m; i++){
