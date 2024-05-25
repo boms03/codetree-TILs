@@ -19,6 +19,7 @@ int main() {
                 if(seat[j]=='1') break;
                 count_left++;
             }
+        }
         
         if(i<n-1){
             for(int j=i+1;j<n;j++){
