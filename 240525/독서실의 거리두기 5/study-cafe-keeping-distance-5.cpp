@@ -12,22 +12,16 @@ int main() {
     for(int i=0;i<n;i++){
         if(seat[i]=='1') continue;
         seat[i] = '1';
-        int count_right = 0;
-        int count_left = 0;
-        if(i>0){
-            for(int j=i-1;j>=0;j--){
-                if(seat[j]=='1') break;
-                count_left++;
+        bool flag = false;
+        for(int j=0;j<n;j++){
+            for(int k=j+1;k<n;k++){
+                if(seat[j] == '1' && seat[k] == '1'){
+                    max_count = max(max_count,k-j-1);
+                    flag = true;
+                }
+                if(flag) break;
             }
         }
-        
-        if(i<n-1){
-            for(int j=i+1;j<n;j++){
-                if(seat[j]=='1') break;
-                count_right++;
-            }
-        }
-        max_count = max(max_count,max(count_right, count_left));
         seat[i] = '0';
     }
     cout << max_count;
