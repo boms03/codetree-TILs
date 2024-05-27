@@ -9,7 +9,7 @@ int main() {
     for(int i=0;i<n;i++){
         cin >> num[i];
     }
-    for(int i=max(num[0],num[n-1]);i<=n;i++){
+    for(int i=max(num[0],num[n-1]);i<=MAX_N;i++){
         int last_idx = 0;
         bool flag = true;
         for(int j=0;j<n;j++){
